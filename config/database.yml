@@ -1,0 +1,29 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: libare
+  password: libare
+  host:     localhost
+  timeout: 5000
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+
+development:
+  <<: *default
+  database: libare_development
+
+
+test:
+  <<: *default
+  database: libare_test
+
+
+production:
+  <<: *default
+  database: <%=ENV['LIBARE_DB_NAME']%>
+  username: <%=ENV['LIBARE_POSTGRESQL_DB_USERNAME']%>
+  password: <%=ENV['LIBARE_POSTGRESQL_DB_PASSWORD']%>
+  host:     <%=ENV['LIBARE_POSTGRESQL_DB_HOST']%>
+  port:     <%=ENV['LIBARE_POSTGRESQL_DB_PORT']%>
+  min_messages: ERROR
+  reconnect: false
