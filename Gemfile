@@ -18,6 +18,11 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
+
+# Added gems
+gem 'bootstrap', '~> 4.0.0.alpha6'
+
+
 group :development, :test do
   gem 'byebug', platform: :mri
 end
