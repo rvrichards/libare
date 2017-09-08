@@ -1,0 +1,2 @@
+json.extract! libation, :id, :user_id, :libation_name, :libation_type, :weight, :weight_type, :container_type, :country_made, :company_name, :website, :date_drank, :store_purchased, :city_purchased, :prov_purchased, :country_purchased, :colour, :pulp, :can_art, :can_design, :sweet, :juice, :sip_guzz, :flavour, :buy_again, :carbonated, :filename, :comments, :created_at, :updated_at
+json.url libation_url(libation, format: :json)

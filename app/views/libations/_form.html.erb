@@ -1,0 +1,147 @@
+<%= form_for(libation) do |f| %>
+  <% if libation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(libation.errors.count, "error") %> prohibited this libation from being saved:</h2>
+
+      <ul>
+      <% libation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %>
+    <%= f.text_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :libation_name %>
+    <%= f.text_field :libation_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :libation_type %>
+    <%= f.text_field :libation_type %>
+  </div>
+
+  <div class="field">
+    <%= f.label :weight %>
+    <%= f.text_field :weight %>
+  </div>
+
+  <div class="field">
+    <%= f.label :weight_type %>
+    <%= f.text_field :weight_type %>
+  </div>
+
+  <div class="field">
+    <%= f.label :container_type %>
+    <%= f.text_field :container_type %>
+  </div>
+
+  <div class="field">
+    <%= f.label :country_made %>
+    <%= f.text_field :country_made %>
+  </div>
+
+  <div class="field">
+    <%= f.label :company_name %>
+    <%= f.text_field :company_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :website %>
+    <%= f.text_field :website %>
+  </div>
+
+  <div class="field">
+    <%= f.label :date_drank %>
+    <%= f.date_select :date_drank %>
+  </div>
+
+  <div class="field">
+    <%= f.label :store_purchased %>
+    <%= f.text_field :store_purchased %>
+  </div>
+
+  <div class="field">
+    <%= f.label :city_purchased %>
+    <%= f.text_field :city_purchased %>
+  </div>
+
+  <div class="field">
+    <%= f.label :prov_purchased %>
+    <%= f.text_field :prov_purchased %>
+  </div>
+
+  <div class="field">
+    <%= f.label :country_purchased %>
+    <%= f.text_field :country_purchased %>
+  </div>
+
+  <div class="field">
+    <%= f.label :colour %>
+    <%= f.text_field :colour %>
+  </div>
+
+  <div class="field">
+    <%= f.label :pulp %>
+    <%= f.number_field :pulp %>
+  </div>
+
+  <div class="field">
+    <%= f.label :can_art %>
+    <%= f.number_field :can_art %>
+  </div>
+
+  <div class="field">
+    <%= f.label :can_design %>
+    <%= f.number_field :can_design %>
+  </div>
+
+  <div class="field">
+    <%= f.label :sweet %>
+    <%= f.number_field :sweet %>
+  </div>
+
+  <div class="field">
+    <%= f.label :juice %>
+    <%= f.number_field :juice %>
+  </div>
+
+  <div class="field">
+    <%= f.label :sip_guzz %>
+    <%= f.number_field :sip_guzz %>
+  </div>
+
+  <div class="field">
+    <%= f.label :flavour %>
+    <%= f.number_field :flavour %>
+  </div>
+
+  <div class="field">
+    <%= f.label :buy_again %>
+    <%= f.text_field :buy_again %>
+  </div>
+
+  <div class="field">
+    <%= f.label :carbonated %>
+    <%= f.check_box :carbonated %>
+  </div>
+
+  <div class="field">
+    <%= f.label :filename %>
+    <%= f.text_field :filename %>
+  </div>
+
+  <div class="field">
+    <%= f.label :comments %>
+    <%= f.text_area :comments %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,57 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  libation_name: MyString
+  libation_type: MyString
+  weight: 1.5
+  weight_type: MyString
+  container_type: MyString
+  country_made: MyString
+  company_name: MyString
+  website: MyString
+  date_drank: 2017-09-07
+  store_purchased: MyString
+  city_purchased: MyString
+  prov_purchased: MyString
+  country_purchased: MyString
+  colour: MyString
+  pulp: 1
+  can_art: 1
+  can_design: 1
+  sweet: 1
+  juice: 1
+  sip_guzz: 1
+  flavour: 1
+  buy_again: MyString
+  carbonated: false
+  filename: MyString
+  comments: MyText
+
+two:
+  user: two
+  libation_name: MyString
+  libation_type: MyString
+  weight: 1.5
+  weight_type: MyString
+  container_type: MyString
+  country_made: MyString
+  company_name: MyString
+  website: MyString
+  date_drank: 2017-09-07
+  store_purchased: MyString
+  city_purchased: MyString
+  prov_purchased: MyString
+  country_purchased: MyString
+  colour: MyString
+  pulp: 1
+  can_art: 1
+  can_design: 1
+  sweet: 1
+  juice: 1
+  sip_guzz: 1
+  flavour: 1
+  buy_again: MyString
+  carbonated: false
+  filename: MyString
+  comments: MyText

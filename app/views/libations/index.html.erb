@@ -1,0 +1,77 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Libations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Libation name</th>
+      <th>Libation type</th>
+      <th>Weight</th>
+      <th>Weight type</th>
+      <th>Container type</th>
+      <th>Country made</th>
+      <th>Company name</th>
+      <th>Website</th>
+      <th>Date drank</th>
+      <th>Store purchased</th>
+      <th>City purchased</th>
+      <th>Prov purchased</th>
+      <th>Country purchased</th>
+      <th>Colour</th>
+      <th>Pulp</th>
+      <th>Can art</th>
+      <th>Can design</th>
+      <th>Sweet</th>
+      <th>Juice</th>
+      <th>Sip guzz</th>
+      <th>Flavour</th>
+      <th>Buy again</th>
+      <th>Carbonated</th>
+      <th>Filename</th>
+      <th>Comments</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @libations.each do |libation| %>
+      <tr>
+        <td><%= libation.user %></td>
+        <td><%= libation.libation_name %></td>
+        <td><%= libation.libation_type %></td>
+        <td><%= libation.weight %></td>
+        <td><%= libation.weight_type %></td>
+        <td><%= libation.container_type %></td>
+        <td><%= libation.country_made %></td>
+        <td><%= libation.company_name %></td>
+        <td><%= libation.website %></td>
+        <td><%= libation.date_drank %></td>
+        <td><%= libation.store_purchased %></td>
+        <td><%= libation.city_purchased %></td>
+        <td><%= libation.prov_purchased %></td>
+        <td><%= libation.country_purchased %></td>
+        <td><%= libation.colour %></td>
+        <td><%= libation.pulp %></td>
+        <td><%= libation.can_art %></td>
+        <td><%= libation.can_design %></td>
+        <td><%= libation.sweet %></td>
+        <td><%= libation.juice %></td>
+        <td><%= libation.sip_guzz %></td>
+        <td><%= libation.flavour %></td>
+        <td><%= libation.buy_again %></td>
+        <td><%= libation.carbonated %></td>
+        <td><%= libation.filename %></td>
+        <td><%= libation.comments %></td>
+        <td><%= link_to 'Show', libation %></td>
+        <td><%= link_to 'Edit', edit_libation_path(libation) %></td>
+        <td><%= link_to 'Destroy', libation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Libation', new_libation_path %>
