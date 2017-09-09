@@ -123,6 +123,8 @@
 <p>
   <strong>Filename:</strong>
   <%= @libation.filename %>
+  <!-- <%= image_tag(@libation.filename.url, alt: 'Image') if @libation.filename? %> -->
+  <%= image_tag(@libation.filename.medium.to_s) %>
 </p>
 
 <p>
