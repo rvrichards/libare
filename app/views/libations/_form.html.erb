@@ -1,4 +1,7 @@
 <%= form_for(libation) do |f| %>
+  <% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end =%>
   <% if libation.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(libation.errors.count, "error") %> prohibited this libation from being saved:</h2>
@@ -11,137 +14,110 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :user_id %>
-    <%= f.text_field :user_id %>
+<div class="form-group row ">
+    <%= f.label :libation_name, "Name", class: 'col-md-1 col-form-label' %>
+    <%= f.text_field :libation_name, class: "form-control col-md-8" %>
+    <%= f.label :colour, class: 'col-md-1 col-form-label'  %>
+    <%= f.text_field :colour, class: "form-control col-md-2"  %>
   </div>
 
-  <div class="field">
-    <%= f.label :libation_name %>
-    <%= f.text_field :libation_name %>
+  <div class="form-group row ">
+    <%= f.label :company_name, "Company", class: 'col-md-2 col-form-label'  %>
+    <%= f.text_field :company_name, class: "form-control col-md-3"  %>
+    <%= f.label :country_made, class: 'col-md-2 col-form-label'  %>
+    <%= f.text_field :country_made, class: "form-control col-md-2"  %>
+
+    <%= f.label :website, class: 'col-md-1 col-form-label'  %>
+    <%= f.text_field :website, class: "form-control col-md-2"  %>
   </div>
 
-  <div class="field">
-    <%= f.label :libation_type %>
-    <%= f.text_field :libation_type %>
+ <div class="form-group row ">
+    <%= f.label :store_purchased, "Purchased at", class: 'col-md-2 col-form-label'  %>
+    <%= f.text_field :store_purchased, class: "form-control col-md-3"  %>
+    <%= f.label :city_purchased, "in", class: 'col-md-0 col-form-label'  %>
+    <%= f.text_field :city_purchased, class: "form-control col-md-2"  %>
+    ,
+    <%= f.text_field :prov_purchased, class: "form-control col-md-1"  %>
+    <%= f.text_field :country_purchased, class: "form-control col-md-1"  %>
   </div>
 
-  <div class="field">
-    <%= f.label :weight %>
-    <%= f.text_field :weight %>
+  <div class="form-group row ">
+    <%= f.label :date_drank, "on", class: 'col-md-2 col-form-label'  %>
+    <%= f.date_select :date_drank, { selected: @libation.date_drank,   order: [:month, :day, :year], prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }, start_year: Date.today.year - 17, end_year: Date.today.year} %>
   </div>
 
-  <div class="field">
-    <%= f.label :weight_type %>
-    <%= f.text_field :weight_type %>
+  <!-- file Upload -->
+  <div class="row">
+    <div class="col-md-8">
+      <div class="row form-group ">
+          <%= f.file_field :lib_image, class: "col-md-8 " %>
+      </div>
+      <div class="row form-group ">
+          <%= f.label :filename, "Description", class: 'col-md-3 col-form-label'  %>
+          <%= f.text_field :filename, class: "col-md-6 " %>
+      </div>
+    </div>
+    <div class="col-md-4">
+      Thumbnail
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :container_type %>
-    <%= f.text_field :container_type %>
+  <div class="form-group row ">
+    <%= f.label :weight, class: 'col-md-1 col-form-label'  %>
+    <%= f.text_field :weight, class: "form-control col-md-1"  %>
+    <%= f.select :weight_type, options_for_select(Libation::WEIGHTS, {:selected => @libation.weight_type}), :prompt => 'Choose' %>
+    <%= f.label :libation_type, class: 'col-md-2 col-form-label'  %>
+    <%= f.select :libation_type, options_for_select(Libation::LIB_TYPES, {:selected => @libation.libation_type}), :prompt => 'Choo$e'  %>
+    <%= f.label :container_type, class: 'col-md-2 col-form-label'  %>
+    <%= f.select :container_type, options_for_select(Libation::CONTAINERS, {:selected => @libation.container_type}), :prompt => 'Choose' %>
   </div>
 
-  <div class="field">
-    <%= f.label :country_made %>
-    <%= f.text_field :country_made %>
+  <div class="form-group row ">
+    <div class="col-md-2 col-form-label">
+      <%= f.label :can_design, 'Design'  %>
+      <%= f.select :can_design, options_for_select((0..5), {:selected => @libation.can_design}), :prompt => 'Pick' %>
+    </div>
+    <div class="col-md-2 col-form-label">
+      <%= f.label :can_art, 'Art'   %>
+      <%= f.select :can_art, options_for_select((0..5), {:selected => @libation.can_art}), :prompt => 'Pick' %>
+    </div>
+    <div class="col-md-2 col-form-label">
+      <%= f.label :sweet  %>
+      <%= f.select :sweet, options_for_select((0..5), {:selected => @libation.sweet}), :prompt => 'Pick' %>
+    </div>
+    <div class="col-md-2 col-form-label">
+      <%= f.label :pulp  %>
+      <%= f.select :pulp, options_for_select((0..5), {:selected => @libation.pulp}), :prompt => 'Pick' %>
+    </div>
+    <div class="col-md-2 col-form-label">
+      <%= f.label :juice  %>
+      <%= f.select :juice, options_for_select((0..5), {:selected => @libation.juice}), :prompt => 'Pick' %>
+    </div>
+    <div class="col-md-2 col-form-label">
+      <%= f.label :sip_guzz, 'Guzz'  %>
+      <%= f.select :sip_guzz, options_for_select((0..5), {:selected => @libation.sip_guzz}), :prompt => 'Pick' %>
+    </div>
+    <div class="col-md-2 col-form-label">
+      <%= f.label :flavour  %>
+      <%= f.select :flavour, options_for_select((0..5), {:selected => @libation.flavour}), :prompt => 'Pick' %>
+    </div>
+    <div class="col-md-3 col-form-label">
+      <%= f.label :buy_again %>
+      <%= f.select :buy_again, options_for_select(Libation::BUY_AGAIN, {:selected => @libation.buy_again}),:prompt => 'Select'  %>
+    </div>
+    <div class="col-md-3 col-form-label checkbox-inline">
+      <%= f.label :carbonated   %>
+      <%= f.select(:carbonated, options_for_select([['Yes', true], ['No', false]], {:selected => @libation.carbonated}),:prompt => "Select") %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :company_name %>
-    <%= f.text_field :company_name %>
+  <div class="form-group row ">
+    <%= f.label :comments, class: 'col-md-2 col-form-label' %>
+    <%= f.text_field :comments, class: "form-control col-md-11" %>
   </div>
 
-  <div class="field">
-    <%= f.label :website %>
-    <%= f.text_field :website %>
+  <div class="form-group row ">
+    <%= f.button :submit %>
   </div>
 
-  <div class="field">
-    <%= f.label :date_drank %>
-    <%= f.date_select :date_drank %>
-  </div>
-
-  <div class="field">
-    <%= f.label :store_purchased %>
-    <%= f.text_field :store_purchased %>
-  </div>
-
-  <div class="field">
-    <%= f.label :city_purchased %>
-    <%= f.text_field :city_purchased %>
-  </div>
-
-  <div class="field">
-    <%= f.label :prov_purchased %>
-    <%= f.text_field :prov_purchased %>
-  </div>
-
-  <div class="field">
-    <%= f.label :country_purchased %>
-    <%= f.text_field :country_purchased %>
-  </div>
-
-  <div class="field">
-    <%= f.label :colour %>
-    <%= f.text_field :colour %>
-  </div>
-
-  <div class="field">
-    <%= f.label :pulp %>
-    <%= f.number_field :pulp %>
-  </div>
-
-  <div class="field">
-    <%= f.label :can_art %>
-    <%= f.number_field :can_art %>
-  </div>
-
-  <div class="field">
-    <%= f.label :can_design %>
-    <%= f.number_field :can_design %>
-  </div>
-
-  <div class="field">
-    <%= f.label :sweet %>
-    <%= f.number_field :sweet %>
-  </div>
-
-  <div class="field">
-    <%= f.label :juice %>
-    <%= f.number_field :juice %>
-  </div>
-
-  <div class="field">
-    <%= f.label :sip_guzz %>
-    <%= f.number_field :sip_guzz %>
-  </div>
-
-  <div class="field">
-    <%= f.label :flavour %>
-    <%= f.number_field :flavour %>
-  </div>
-
-  <div class="field">
-    <%= f.label :buy_again %>
-    <%= f.text_field :buy_again %>
-  </div>
-
-  <div class="field">
-    <%= f.label :carbonated %>
-    <%= f.check_box :carbonated %>
-  </div>
-
-  <div class="field">
-    <%= f.label :filename %>
-    <%= f.text_field :filename %>
-  </div>
-
-  <div class="field">
-    <%= f.label :comments %>
-    <%= f.text_area :comments %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>

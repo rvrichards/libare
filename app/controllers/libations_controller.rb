@@ -14,6 +14,7 @@ class LibationsController < ApplicationController
 
   # GET /libations/new
   def new
+    # @libation = current_user.libations #Libation.new
     @libation = Libation.new
   end
 
@@ -25,6 +26,7 @@ class LibationsController < ApplicationController
   # POST /libations.json
   def create
     @libation = Libation.new(libation_params)
+    @libation.user_id=current_user.id
 
     respond_to do |format|
       if @libation.save
