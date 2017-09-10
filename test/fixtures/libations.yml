@@ -25,7 +25,7 @@ one:
   flavour: 1
   buy_again: MyString
   carbonated: false
-  filename: MyString
+  image: MyString
   comments: MyText
 
 two:
@@ -53,5 +53,5 @@ two:
   flavour: 1
   buy_again: MyString
   carbonated: false
-  filename: MyString
+  image: MyString
   comments: MyText

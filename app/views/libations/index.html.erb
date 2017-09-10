@@ -29,8 +29,8 @@
       <th>Flavour</th>
       <th>Buy again</th>
       <th>Carbonated</th>
-      <th>Filename</th>
-      <th>FilenameRVR</th>
+      <th>Image Name</th>
+      <th>Image</th>
       <th>Comments</th>
       <th colspan="3"></th>
     </tr>
@@ -63,8 +63,8 @@
         <td><%= libation.flavour %></td>
         <td><%= libation.buy_again %></td>
         <td><%= libation.carbonated %></td>
-        <td><%= libation.filename %></td>
-        <td><%= image_tag(libation.filename.thumb.to_s) %></td>
+        <td><%= libation.image %></td>
+        <td><%= image_tag(libation.image.thumb.to_s) %></td>
         <td><%= libation.comments %></td>
         <td><%= link_to 'Show', libation %></td>
         <td><%= link_to 'Edit', edit_libation_path(libation) %></td>

@@ -24,6 +24,7 @@ gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'file_validators'
 
 group :development, :test do
   gem 'byebug', platform: :mri

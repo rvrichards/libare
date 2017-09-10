@@ -49,16 +49,17 @@
   <!-- file Upload -->
   <div class="row">
     <div class="col-md-8">
-<!--       <div class="row form-group ">
-          <%= f.file_field :lib_image, class: "col-md-8 " %>
-      </div> -->
       <div class="row form-group ">
-          <%= f.label :filename, "Description", class: 'col-md-3 col-form-label'  %>
-          <%= f.file_field :filename, class: "col-md-6 " %>
+          <%= f.label :image, "Description", class: 'col-md-3 col-form-label'  %>
+          <%= f.file_field :image, class: "col-md-6 " %>
+          <%= f.hidden_field :image_cache %>
       </div>
     </div>
     <div class="col-md-4">
       Thumbnail
+      <% if libation.image? %>
+          <%= image_tag libation.image.thumb.url %>
+      <% end %>
     </div>
   </div>
 

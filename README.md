@@ -1,24 +1,27 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The libare application will list libations.
+In future guests/users will be allowed to add libations, and to vote.
 
-Things you may want to cover:
+The Stack details:
 
-* Ruby version
+* Rails version: 5.0.5
+* Ruby version:  2.3.1p112 (2016-04-26 revision 54768) [x86_64-linux]
+* PostgreSQL version: psql (PostgreSQL) 9.6.4
+* Linux Ubuntu 16.04 zesty
+* Bootstrap 4.0.0.alpha6
 
-* System dependencies
+Added Gems
+* bootstrap
+* devise
+* carrierwave
+* mini_magick
+* file_validators
 
-* Configuration
+## About Pages
 
-* Database creation
+A little bit of history.
 
-* Database initialization
+## Help Pages
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Contain list of data and definitions
