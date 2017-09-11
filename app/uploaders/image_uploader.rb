@@ -23,19 +23,35 @@ class ImageUploader < CarrierWave::Uploader::Base
   # end
 
   # Process files as they are uploaded:
-  # process scale: [200, 300]
-  #
+  process resize_to_limit: [1200, 1600]
+  # process :resize_to_limit => [1200, 1600]
+
   # def scale(width, height)
   #   # do something
   # end
 
   # Create different versions of your uploaded files:
   version :thumb do
-    process resize_to_fit: [50, 50]
+    process resize_to_limit: [40, 50]
   end
   version :medium do
-    process resize_to_fit: [666, 666]
+    process resize_to_limit: [222, 333]
   end
+
+  # version :print_stuff do
+  #   process :print_out_stuff
+  # end
+
+  # def print_out_stuff
+  #   # img = Magick::Image.read(current_path)
+  #   img = MiniMagick::Image.open(current_path)
+  #   puts "------xxx-----img#{img.inspect}"
+  #   puts "------xxx-----img.dimensions(w,h)=#{img.dimensions}"
+  #   puts "------xxx-----img.size=#{img.size}"
+  #   puts "------xxx-----img.resolution=#{img.resolution}"
+  #   puts "------xxx-----img.type=#{img.type}"
+  # end
+
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:

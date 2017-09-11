@@ -1,2 +1,15 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<div class="container-fluid">
+  <h1>Libations</h1>
+  <p>A sampling of some libations.</p>
+
+  <div class="row">
+    <% @libations.each do |p| %>
+      <div class="col-md-3">
+        <a href="/libations/<%= p.id %>">
+          <%= image_tag p.image.url(:medium), class: "" %>
+        </a>
+      </div>
+    <% end %>
+  </div>
+
+</div> <!-- end of container -->

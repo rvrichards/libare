@@ -14,9 +14,13 @@ class LibationsController < ApplicationController
 
   # GET /libations/new
   def new
-    # @libation = current_user.libations #Libation.new
     @libation = Libation.new
+    # @libation = current_user.libations.build(libation_params)
   end
+
+
+# line: @libation = Libation.new(libation_params)
+#  via: @libation = current_user.libation.build(libation_params)
 
   # GET /libations/1/edit
   def edit
@@ -26,6 +30,7 @@ class LibationsController < ApplicationController
   # POST /libations.json
   def create
     @libation = Libation.new(libation_params)
+    # puts "---------1#{@libation.inspect}"
     @libation.user_id=current_user.id
 
     respond_to do |format|
