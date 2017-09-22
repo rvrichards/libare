@@ -51,8 +51,10 @@
     <div class="col-md-8">
       <div class="row form-group ">
           <%= f.label :image, "Description", class: 'col-md-3 col-form-label'  %>
-          <%= f.file_field :image, class: "col-md-6 " %>
+          <%= f.file_field :image, class: "col-md-3 " %>
           <%= f.hidden_field :image_cache %>
+          <%= f.label "Or URL", class: 'col-md-2 col-form-label'  %>
+          <%= f.text_field :remote_image_url, class: "col-md-3" %>
       </div>
     </div>
     <div class="col-md-4">
@@ -62,6 +64,8 @@
       <% end %>
     </div>
   </div>
+
+
 
   <div class="form-group row ">
     <%= f.label :weight, class: 'col-md-1 col-form-label'  %>

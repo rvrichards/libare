@@ -132,5 +132,9 @@
   <%= @libation.comments %>
 </p>
 
-<%= link_to 'Edit', edit_libation_path(@libation) %> |
-<%= link_to 'Back', libations_path %>
+<% if user_signed_in? %>
+  <%= link_to 'Edit', edit_libation_path(@libation) %> |
+  <%= link_to 'Back', libations_path %>
+<% else %>
+  <%= link_to 'Libations', root_path %>
+<% end %>

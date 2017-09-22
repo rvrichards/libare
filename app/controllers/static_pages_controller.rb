@@ -3,7 +3,7 @@ class StaticPagesController < ApplicationController
   end
 
   def home
-    @libations = Libation.order("RANDOM()").limit(3)
+    @libations = Libation.order("RANDOM()").limit(4)
   end
 
   def help

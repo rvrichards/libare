@@ -76,6 +76,6 @@ class LibationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def libation_params
-      params.require(:libation).permit(:user_id, :libation_name, :libation_type, :weight, :weight_type, :container_type, :country_made, :company_name, :website, :date_drank, :store_purchased, :city_purchased, :prov_purchased, :country_purchased, :colour, :pulp, :can_art, :can_design, :sweet, :juice, :sip_guzz, :flavour, :buy_again, :carbonated, :image, :image_cache, :comments)
+      params.require(:libation).permit(:user_id, :libation_name, :libation_type, :weight, :weight_type, :container_type, :country_made, :company_name, :website, :date_drank, :store_purchased, :city_purchased, :prov_purchased, :country_purchased, :colour, :pulp, :can_art, :can_design, :sweet, :juice, :sip_guzz, :flavour, :buy_again, :carbonated, :image, :image_cache, :comments, :remote_image_url)
     end
 end
