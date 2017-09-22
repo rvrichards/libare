@@ -25,6 +25,7 @@ gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'file_validators'
+gem 'fog-aws'
 
 group :development, :test do
   gem 'byebug', platform: :mri
