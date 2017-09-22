@@ -6,7 +6,7 @@
     <% @libations.each do |p| %>
       <div class="col-md-3">
         <a href="/libations/<%= p.id %>">
-          <%= image_tag p.image.url(:medium), class: "" %></br>
+          <%= image_tag p.image.medium.to_s), class: "" %></br>
           <%= sanitize p.libation_name %>
         </a>
       </div>
