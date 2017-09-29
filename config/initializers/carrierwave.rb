@@ -18,6 +18,6 @@ CarrierWave.configure do |config|
     config.storage = :fog
   end
 
-  config.cache_dir        = "#{Rails.root}/tmp" # To let CarrierWave work on Heroku
-  # config.cache_dir        = "#{Rails.root}/tmp/uploads" # To let CarrierWave work on Heroku
+  # config.cache_dir        = "#{Rails.root}/tmp" # To let CarrierWave work on Heroku
+  config.cache_dir        = "#{Rails.root}/tmp/uploads" # To let CarrierWave work on Heroku
 end
